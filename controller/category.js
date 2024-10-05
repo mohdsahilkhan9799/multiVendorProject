@@ -27,7 +27,7 @@ res.status(400).json({
 }
 
 export const getcategory=async(req,res)=>{
-    const url = process.env.URL;
+    const url = process.env.URL || 'http://localhost:1999';
     try {
        const findCategoryData= await Category.find()
 
