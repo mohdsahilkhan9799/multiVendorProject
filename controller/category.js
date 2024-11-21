@@ -27,7 +27,8 @@ res.status(400).json({
 }
 
 export const getcategory=async(req,res)=>{
-    const url = process.env.URL || 'http://localhost:1999';
+    // const url = process.env.URL || 'http://localhost:1999';
+        const url = req.protocol + "://" + req.get("host"); // Automatically gets the current host URL
     try {
        const findCategoryData= await Category.find()
 
